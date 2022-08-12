@@ -8,8 +8,6 @@ const employee = {
 
 employee.name = 'kevin'
 
-console.log (employee.name)
-
 
 function updateEmployeeWithKeyAndValue(employee, key, value){
    const newObj = {...employee};
@@ -25,14 +23,24 @@ function destructivelyUpdateEmployeeWithKeyAndValue(obj, key, value) {
   }
 
 function deleteFromEmployeeByKey(obj, key){
-  let newobj = {
-    'name': 'diana',
-    'Address': '42',
-    
-  };
+  let newobj = {...obj}
+
+
+  delete newobj[key];
+
+  return newobj
+
+ 
 }
-  delete newObj.name;
- console.log (employee)
+
+
+function destructivelyDeleteFromEmployeeByKey(employee, key){
+    delete employee[key]
+
+    return employee
+}
+  
+
   
   
 
